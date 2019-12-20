@@ -36,11 +36,12 @@ public class BoardController {
     @PutMapping("/articles/{id}")
     public Article updateArticle(@PathVariable long id, @RequestBody Article newArticle) {
         Article storedArticle = boardService.getArticle(id);
-        storedArticle.setUserName(newArticle.getUserName());
-        storedArticle.setTitle(newArticle.getTitle());
-        storedArticle.setContents(newArticle.getContents());
-        storedArticle.setPassword(newArticle.getPassword());
-        storedArticle.setDateTime(LocalDateTime.now());
+
+        storedArticle.setUserName(newArticle.getUserName())
+                .setTitle(newArticle.getTitle())
+                .setContents(newArticle.getContents())
+                .setPassword(newArticle.getPassword())
+                .setDateTime(LocalDateTime.now());
 
         boardService.insertArticle(storedArticle);
         return storedArticle;
