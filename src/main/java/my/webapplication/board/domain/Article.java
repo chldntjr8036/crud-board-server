@@ -40,11 +40,13 @@ public class Article {
         return this;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public Article setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
+        return this;
     }
 
-    public void setViewCount(int viewCount) {
+    public Article setViewCount(int viewCount) {
         this.viewCount = viewCount;
+        return this;
     }
 }
