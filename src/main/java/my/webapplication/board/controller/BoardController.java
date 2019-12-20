@@ -13,21 +13,19 @@ public class BoardController {
 
     @Autowired
     BoardService boardService;
-    @CrossOrigin(origins = "http://localhost:9000")
+
     @GetMapping("/articles")
     public List<Article> getArticles(){
         return boardService.getAllArticles();
     }
 
     //read
-    @CrossOrigin(origins = "http://localhost:9000")
     @GetMapping("/articles/{id}")
     public Article getArticle(@PathVariable("id") long id) {
         return boardService.getArticle(id);
     }
 
     //create
-    @CrossOrigin(origins = "http://localhost:9000")
     @PostMapping("/article")
     public Article createArticle(@RequestBody Article article) {
         article.setDateTime(LocalDateTime.now());
@@ -35,7 +33,6 @@ public class BoardController {
     }
 
     //update
-    @CrossOrigin(origins = "http://localhost:9000")
     @PutMapping("/articles/{id}")
     public Article updateArticle(@PathVariable long id, @RequestBody Article newArticle) {
         Article storedArticle = boardService.getArticle(id);
@@ -50,7 +47,6 @@ public class BoardController {
     }
 
     //delete
-    @CrossOrigin(origins = "http://localhost:9000")
     @DeleteMapping("/articles/{id}")
     public void deleteArticle(@PathVariable long id) {
         boardService.deleteArticle(id);
