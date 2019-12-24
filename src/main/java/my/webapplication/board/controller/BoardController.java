@@ -28,7 +28,6 @@ public class BoardController {
     //create
     @PostMapping("/article")
     public Article createArticle(@RequestBody Article article) {
-        article.setDateTime(LocalDateTime.now());
         return boardService.insertArticle(article);
     }
 
