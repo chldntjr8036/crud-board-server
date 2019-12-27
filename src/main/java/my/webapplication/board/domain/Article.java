@@ -49,4 +49,32 @@ public class Article {
         this.viewCount = viewCount;
         return this;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getContents() {
+        return contents;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public int getViewCount() {
+        return viewCount;
+    }
 }
